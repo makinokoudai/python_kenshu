@@ -2,7 +2,7 @@ import sys
 args = [int(sys.argv[i]) for i in [1,2,3]]
 
 def main(args):
-    #条件1
+    #条件2
     if args[0] < 50:
         return False
     if args[1] < 50:
