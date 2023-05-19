@@ -40,9 +40,13 @@ elif type == '麺類':
         foods["パスタ"] -= price_reduction
         if foods["ラーメン"] <= 0:
                foods["ラーメン"] = 1
-        elif foods["うどん"] <= 0:
+        else:
+               pass
+        if foods["うどん"] <= 0:
                foods["うどん"] = 1
-        elif foods["パスタ"] <= 0:
+        else:
+               pass
+        if foods["パスタ"] <= 0:
                foods["パスタ"] = 1
         else:
                pass
