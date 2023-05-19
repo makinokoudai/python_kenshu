@@ -8,4 +8,5 @@ distance = {
 }
 import sys
 dep,dest = sys.argv[1:3]
-print(abs(round(distance[dest] - distance[dep], 2)),end="")
+from fractions import Fraction
+print(abs(float(Fraction(str(distance[dest])) - Fraction(str(distance[dep])))),end="")
