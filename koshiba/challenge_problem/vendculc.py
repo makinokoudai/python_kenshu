@@ -6,16 +6,13 @@ print("ソーダ : 160円")
 print("コーンポタージュ : 130円")
 money = int(input("投入金額を入力してください"))
 
-# 1円玉と5円玉の抽出
-money_str = str(money)
-if money_str[-1] != 0:
-    print("1円玉、5円玉は使用できません。再度投入金額を入力してください")
-else:
-    pass
-
-
 # 飲み物の定義
 drinks = {"お茶" : 110, "コーヒー" : 100, "ソーダ" : 160, "コーンポタージュ" : 130}
+
+# 1円玉と5円玉の抽出
+money_str = str(money)
+while not money_str[-1] == 0:
+    money = int(input("1円玉、5円玉は使用できません。再度投入金額を入力してください"))
 
 # 投入金額に応じた対応
 if money >= 100:
@@ -65,7 +62,7 @@ else:
 i_100 = 0
 while money > 100:
     money -=100
-    i_1000 += 1
+    i_100 += 1
 else:
     pass
 
@@ -80,7 +77,7 @@ else:
 i_10 = 0
 while money > 10:
     money -=10
-    i_1000 += 1
+    i_10 += 1
 else:
     pass
 
