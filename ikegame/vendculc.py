@@ -11,7 +11,14 @@ class VendingMachine():
         print(self.goods)
 
     def insert_price(self):
-        self.inserted_price = int(input("投入金額を入力してください"))
+        while True:
+            try:
+                self.inserted_price = int(input("投入金額を入力してください"))
+                break
+            except ValueError:
+                print("数字で入力してください")
+
+            
 
     def start_proc(self):
         self.print_all_goods()
@@ -95,11 +102,11 @@ class VendingMachine():
 
         if sum(res.values()):
             print("おつり")
-            for kind,value in res.items():
-                if value:
-                    tani = "玉"
-                    if value >= 1000:tani = "札"
-                    print(str(kind) + "円" + tani + ":" + str(value) + "枚")
+            for kind,amount in res.items():
+                if amount:
+                    tanni = "玉"
+                    if kind >= 1000:tanni = "札"
+                    print(str(kind) + "円" + tanni + ":" + str(amount) + "枚")
 
         return
     
