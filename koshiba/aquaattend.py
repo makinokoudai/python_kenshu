@@ -14,13 +14,8 @@ year, month, today =  date_aqua[:4], date_aqua[4:6], date_aqua[6:]
 dt = date(int(year), int(month), int(today))
 
 # seqのカウント
-seq = 1
-seq_check = session.query(Attendnum).filter_by(entry_date=date_aqua).all()
-print(seq_check)
-if seq_check != []:
-    seq += 1
-else:
-    pass
+seq_check = session.query(Attendnum).filter_by(entry_date=date_aqua).count()
+seq = seq_check + 1
 
 # 登録するデータの編集
 attendnum = Attendnum(
