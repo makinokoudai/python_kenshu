@@ -1,0 +1,4 @@
+from database import session
+from tables import Holiday
+
+print(session.query(Holiday).filter_by(holi_text= "お正月").all()[0].holi_date)
