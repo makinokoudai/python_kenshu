@@ -18,7 +18,7 @@ year = int((date_aqua - month - today) / 10000)
 dt = date(year, month, today)
 
 day_of_week = dt.strftime("%a")
-print(day_of_week)
+
 if day_of_week == "Sat" or day_of_week == "Sun":
     fee_adult = 2400
     fee_child = 1500
