@@ -8,7 +8,7 @@ price_reduction = int(args[2])
 # 辞書型で定義
 foods = {"リンゴ":80 , "みかん":198, "バナナ":150, "ビール":360, "日本酒":580, "ラーメン":380, "うどん":128, "パスタ":258}
 
-# 値下げ
+# 値下げ、0円以下のものを1円にする。
 if type == "果物類":
         foods["リンゴ"] -= price_reduction
         foods["みかん"] -= price_reduction
@@ -53,7 +53,7 @@ elif type == '麺類':
 else:
     print("error")
 
-# 0円以下のものを1円にする。
+# 出力
 
 print(foods, end="")
 
