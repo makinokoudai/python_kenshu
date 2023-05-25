@@ -30,5 +30,5 @@ else:
         child_fee = 1500
         
 # 料金の計算
-sum_fee += adult_fee * int(adult) + child_fee * int(child)
+sum_fee = adult_fee * int(adult) + child_fee * int(child)
 print(sum_fee,end="")
