@@ -13,7 +13,7 @@ number_child = int(args[3])
 year, month, today =  date_aqua[:4], date_aqua[4:6], date_aqua[6:]
 dt = date(int(year), int(month), int(today))
 
-# 日付の取得
+# 曜日の取得
 day_of_week = dt.strftime("%a")
 
 # データベースからデータを取得

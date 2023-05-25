@@ -9,10 +9,17 @@ class Holiday(Base):
     holi_date = Column('holi_date', Date, primary_key = True)
     holi_text = Column('holi_text', String(20))
 
+# テーブル : Attendnumの定義
+class Attendnum(Base):
+    __tablename__ = 'attendnum'
+    entry_date = Column('entry_date', Date, primary_key = True)
+    seq = Column('seq', Integer, primary_key = True)
+    adult = Column('adult', Integer)
+    children = Column('children', Integer)
+
 def main(args):
     """メイン関数"""
     Base.metadata.create_all(bind = ENGINE)
 
 if __name__ == "__main__":
     main(sys.argv)
-
