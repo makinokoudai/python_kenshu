@@ -18,21 +18,17 @@ if weekday == "Sat" or weekday == "Sun":
     # 休日は料金を更新する
     adult_fee = 2400
     child_fee = 1500
-    # 合計料金の計算
-    sum_fee += adult_fee * int(adult)
-    sum_fee += child_fee * int(child)
+    
 else:
+    # 休日でなければholidayDBを取得
     holiday = session.query(Holiday.holi_date).filter_by(holi_date=dt).first()
     if holiday is None:
-        # 平日の処理
-        sum_fee += adult_fee * int(adult)
-        sum_fee += child_fee * int(child)
+        pass
     else :
         # 祝日の処理
         adult_fee = 2400
         child_fee = 1500
-        # 合計料金の計算
-        sum_fee += adult_fee * int(adult)
-        sum_fee += child_fee * int(child)
-    
+        
+# 料金の計算
+sum_fee += adult_fee * int(adult) + child_fee * int(child)
 print(sum_fee,end="")
