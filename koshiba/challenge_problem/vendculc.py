@@ -110,7 +110,7 @@ else:
 
 remainings = [i_5000, i_1000, i_500, i_100, i_50, i_10]
 
-print("おつり")
+print(f'おつり : {money}円')
 print(f"5000円札 : {remainings[0]}枚")
 print(f"1000円札 : {remainings[1]}枚")
 print(f"500円玉 : {remainings[2]}枚")
