@@ -24,29 +24,39 @@ else:
 # 購入案内
 print("何を購入しますか (商品名/cancel)")
 product = input()
-if product == "お茶":
-    money -= drinks["お茶"]
-elif product == "コーヒー":
-    money -= drinks["コーヒー"]
-elif product == "ソーダ":
-    money -= drinks["ソーダ"]
-elif product == "コーンポタージュ":
-    money -= drinks["コーンポタージュ"]
-elif product == "cancel":
+
+if product == "cancel":
     pass
+else:
+    while money < drinks[product]:
+        print(f'{money}円では購入できる商品がありません。再度商品名を入力してください。')
+        product = input()
+    else:
+        money -= drinks[product]
+
+# 残金表示
+print(f'残金 : {money}円')
 
 # 追加購入の案内
-while money > 100: # 100円以下ならパス
+while money >= 100: # 100円以下ならパス
     print("続けて購入しますか (Y/N)")
     YN = input()
     if YN == "Y": # Nならパス
-        print("何を購入しますか (商品名/cancel)")
-        product = input()
-        while money < drinks[product]: # 購入不可なら再度商品名入力
-            print("再度商品名を入力してください。")
-            product = input()
+        if product == "cancel": # cancelしたらパス
+            pass
         else:
-            money -= drinks[product]
+            print("何を購入しますか (商品名/cancel)")
+            product = input()
+            while money < drinks[product]: # 購入不可なら再度商品名入力
+                print("再度商品名を入力してください。")
+                product = input()
+                if product == "cancel": # cancelしたらパス
+                    break
+                else:
+                    pass
+            else:
+                money -= drinks[product]
+                print(f'残金 : {money}円')
     else : 
         break
 else:
